@@ -12,13 +12,36 @@ namespace CommandPattern
         {
             //Command pattern example
             CInvoker cmdInvoker = new CInvoker();
-            ICommand cmd1 = cmdInvoker.GetCommand("open");
-            cmd1.Run();
-            cmdInvoker.GetCommand("update").Run();
-            //or
-            new CInvoker().GetCommand("close").Run();
 
-            Console.ReadLine();
+            /*ICommand cmd1 = cmdInvoker.GetCommand("open");
+            cmd1.Run();
+            
+            cmdInvoker.GetCommand("update").Run();
+            
+            //or
+            new CInvoker().GetCommand("close").Run();*/
+
+            cmdInvoker.ShowAvailableCommands();
+
+
+            while (true)
+            {
+                string s = Console.ReadLine();
+
+                Console.WriteLine("\nYour command: [" + s + "]\n");
+
+                if (s == "help")
+                {
+                    cmdInvoker.ShowAvailableCommands();
+                    continue;
+                }
+                var command = cmdInvoker.GetCommand(s);
+                if (command != null)
+                    command.Run();
+            }
+
+
+
         }
     }
 }
