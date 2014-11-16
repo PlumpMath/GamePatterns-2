@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+// http://gameprogrammingpatterns.com/command.html
+// http://en.wikipedia.org/wiki/Command_pattern#A_simpler_example
+// http://www.dotnetperls.com/main
 namespace CommandPattern
 {
     class Program
